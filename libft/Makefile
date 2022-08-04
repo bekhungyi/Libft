@@ -6,7 +6,7 @@
 #    By: bhung-yi <bhung-yi@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 17:28:18 by bhung-yi          #+#    #+#              #
-#    Updated: 2022/08/02 20:20:41 by bhung-yi         ###   ########.fr        #
+#    Updated: 2022/08/04 17:52:20 by bhung-yi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,14 +29,14 @@ SRCS	= ft_isalpha.c \
 		  ft_memset.c \
 		  ft_bzero.c \
 		  ft_memcpy.c \
-		  #ft_memmove.c \
+		  ft_memmove.c \
 		  ft_strlcpy.c \
 		  ft_strlcat.c \
 		  ft_toupper.c \
 		  ft_tolower.c \
 		  ft_strchr.c \
 		  ft_strrchr.c \
-		  ft_strncmp.c \
+		  #ft_strncmp.c \
 		  ft_memchr.c \
 		  ft_memcmp.c \
 		  ft_strnstr.c \
