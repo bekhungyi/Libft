@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhung-yi <bhung-yi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/15 13:36:43 by bhung-yi          #+#    #+#             */
-/*   Updated: 2022/08/16 19:37:03 by bhung-yi         ###   ########.fr       */
+/*   Created: 2022/08/30 00:06:15 by bhung-yi          #+#    #+#             */
+/*   Updated: 2022/08/30 00:06:30 by bhung-yi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int atoi(const char *nptr)
 {
-	size_t	n;
+    int				sign;
+	long long		value;
 
-	if (*needle == '\0')
-		return ((char*)haystack);
-	n = ft_strlen((char *)needle);
-	while (*haystack != '\0' && len-- >= n)
+	sign = 1;
+	value = 0;
+	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n' ||
+			*nptr == '\r' || *nptr == '\t' || *nptr == '\v')
+		nptr++;
+	if (*nptr == '-')
+		sign = -1;
+	if (*nptr == '-' || *nptr == '+')
+		++nptr;
+	while (ft_isdigit(*nptr))
 	{
-		if (*haystack == *needle && ft_memcmp(haystack, needle, n) == 0)
-			return ((char *)haystack);
-		haystack++;
+		value = value * 10 + (*nptr - '0');
+		nptr++;
 	}
-	return (NULL);
+	value = sign == 1 ? value : -value;
+	return (value);
 }

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhung-yi <bhung-yi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/15 13:36:43 by bhung-yi          #+#    #+#             */
-/*   Updated: 2022/08/16 19:37:03 by bhung-yi         ###   ########.fr       */
+/*   Created: 2022/08/30 00:12:30 by bhung-yi          #+#    #+#             */
+/*   Updated: 2022/08/30 00:12:37 by bhung-yi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char    *ft_strdup(const char *s)
 {
-	size_t	n;
+    int		idx;
+	char	*dest;
 
-	if (*needle == '\0')
-		return ((char*)haystack);
-	n = ft_strlen((char *)needle);
-	while (*haystack != '\0' && len-- >= n)
+	if (!(dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
+	idx = 0;
+	while (s[idx])
 	{
-		if (*haystack == *needle && ft_memcmp(haystack, needle, n) == 0)
-			return ((char *)haystack);
-		haystack++;
+		dest[idx] = s[idx];
+		idx++;
 	}
-	return (NULL);
+	dest[idx] = '\0';
+	return (dest);
 }
