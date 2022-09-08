@@ -6,7 +6,7 @@
 #    By: bhung-yi <bhung-yi@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 17:28:18 by bhung-yi          #+#    #+#              #
-#    Updated: 2022/08/15 15:04:48 by bhung-yi         ###   ########.fr        #
+#    Updated: 2022/09/04 18:27:40 by bhung-yi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS	= -Wall -Wextra -Werror
 
 RM		= /bin/rm -f
 
-NAME	= libft.a
+NAME	= fuck.a
 
 INCLUDE	= libft.h
 
@@ -40,8 +40,8 @@ SRCS	= ft_isalpha.c \
 		  ft_memchr.c \
 		  ft_memcmp.c \
 		  ft_strnstr.c \
-		  ft_atoi.c \
-		  #ft_calloc.c \
+		  #ft_atoi.c \
+		  ft_calloc.c \
 		  ft_strdup.c
 
 OBJS	= ${SRCS:.c=.o}
