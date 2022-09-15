@@ -6,8 +6,21 @@
 /*   By: bhung-yi <bhung-yi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 17:38:45 by bhung-yi          #+#    #+#             */
-/*   Updated: 2022/09/04 17:38:46 by bhung-yi         ###   ########.fr       */
+/*   Updated: 2022/09/15 23:24:58 by bhung-yi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (!s || fd < 0)
+	{
+		return ;
+	}
+	while (*s)
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
+}

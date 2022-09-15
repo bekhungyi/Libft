@@ -6,7 +6,7 @@
 /*   By: bhung-yi <bhung-yi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 12:40:41 by bhung-yi          #+#    #+#             */
-/*   Updated: 2022/09/12 19:18:55 by bhung-yi         ###   ########.fr       */
+/*   Updated: 2022/09/15 22:36:17 by bhung-yi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ int	ft_atoi(const char *str)
 		value = value * 10 + (*str - '0');
 		str++;
 	}
-	value = sign == 1 ? value : -value;
-	return (value);
+	return (value * sign);
 }

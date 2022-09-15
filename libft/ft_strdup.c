@@ -6,7 +6,7 @@
 /*   By: bhung-yi <bhung-yi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:38:52 by bhung-yi          #+#    #+#             */
-/*   Updated: 2022/09/12 18:54:51 by bhung-yi         ###   ########.fr       */
+/*   Updated: 2022/09/15 22:46:17 by bhung-yi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strdup(const char *s1)
 	int		i;
 	char	*dest;
 
-	if (!(dest = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
+	dest = (char *) malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!dest)
 		return (NULL);
 	i = 0;
 	while (s1[i])
