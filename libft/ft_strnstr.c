@@ -6,7 +6,7 @@
 /*   By: bhung-yi <bhung-yi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:36:43 by bhung-yi          #+#    #+#             */
-/*   Updated: 2022/08/25 13:18:44 by bhung-yi         ###   ########.fr       */
+/*   Updated: 2022/09/15 23:35:11 by bhung-yi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,23 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	n;
+	size_t	i;
+	size_t	j;
 
-	if (*needle == '\0')
+	i = 0;
+	j = 0;
+	if (ft_strlen(needle) == 0)
 		return ((char *)haystack);
-	n = ft_strlen((char *)needle);
-	while (*haystack != '\0' && len-- >= n)
+	while (i < len && haystack[i])
 	{
-		if (*haystack == *needle && ft_memcmp(haystack, needle, len) == 0)
-			return ((char *)haystack);
-		haystack++;
+		j = 0;
+		while (haystack[i + j] == needle[j]
+			&& haystack[i + j] && needle[j] && i + j < len)
+			j++;
+		if (!needle[j])
+			return ((char *)haystack + i);
+		else
+			i++;
 	}
-	return (NULL);
+	return (0);
 }
